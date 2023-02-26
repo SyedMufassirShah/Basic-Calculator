@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Calculator</title>
+</head>
+<body>
+    <!-- HTML Start -->
+    <!-- Getting Input for First Number -->
+    <input type="number" placeholder="Please Enter First Number: " id="firstNum" name="firstNum"> 
+    <br>
+    <!-- Getting Input for Second Number -->
+    <input type="number" placeholder="Please Enter Second Number: " id="secondNum" name="secondNum">
+    <br>
+    <!-- Getting Input for the operator -->
+    <input type="text" placeholder="Please Enter The Operator: " id="operator" name="operator">
+    <br>
+    <!-- Getting Output of the Final Calculation -->
+    <input type="number" placeholder="Result oF The  Above Calculation is: " id="finalResult">
+    <br>
+    <!-- Button onClick() Call -->
+    <button onclick="calculate()">Calculate</button>
+    <!-- HTML End -->
+
+    <!-- JavaScript Start -->
+    <script>
+
+        // Declaring Global Variables and Assigning them Values
+        
+
+        // Function Defined Below
+        function calculate()
+        {
+            var firstNumber =  document.getElementById("firstNum").value;
+            var secondNumber = document.getElementById("secondNum").value;
+            var operatorSign = document.getElementById("operator").value;        
+            var result = 0;
+
+            // Conditions
+            if( operatorSign == "+" )
+            {
+                result = (+firstNumber) + (+secondNumber);
+            }
+            else if( operatorSign == "-" )
+            {
+                result = (+firstNumber) - (+secondNumber);
+            }
+            else if( operatorSign == "*")
+            {
+                result = (+firstNumber) * (+secondNumber);
+            }
+            else if( operatorSign == "/")
+            {
+                result = (+firstNumber) / (+secondNumber);
+            }
+            else if( operatorSign == "%")
+            {
+                result = (+firstNumber) % (+secondNumber);
+            }
+            else
+            {
+                result = "Wrong Operator used!";
+            }
+            // Function Return 
+            return document.getElementById("finalResult").value = result;
+        }
+    </script>
+    <!-- JavaScript End -->
+</body>
+</html>
